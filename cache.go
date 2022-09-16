@@ -102,7 +102,6 @@ func (s *RdsStorage) Get(key string) (string, error) {
 
 func (s *RdsStorage) Set(key string, value string) error {
 	_, err := s.pool.Set(context.TODO(), key, value, 0).Result()
-	// TODO set error return old value
 	return err
 }
 
